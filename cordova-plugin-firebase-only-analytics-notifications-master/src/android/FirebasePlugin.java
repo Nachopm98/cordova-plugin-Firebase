@@ -539,12 +539,13 @@ public class FirebasePlugin extends CordovaPlugin {
     while (iter.hasNext()) {
       String key = (String) iter.next();
       Object value = params.get(key);
-
+      
       if (value instanceof Integer || value instanceof Double) {
         bundle.putFloat(key, ((Number) value).floatValue());
       } else {
         bundle.putString(key, value.toString());
       }
+    Log.d(TAG,"Type of value " + value.getClass().getName());
     }
 
     cordova.getThreadPool().execute(new Runnable() {

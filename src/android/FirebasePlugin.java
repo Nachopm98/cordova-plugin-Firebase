@@ -545,6 +545,10 @@ public class FirebasePlugin extends CordovaPlugin {
       } else {
         bundle.putString(key, value.toString());
       }
+       Log.d(TAG, "value Type v1 : " + value.getClass().getSimpleName());
+       Log.d(TAG, "value Type v2 : " + value.getClass().getName());
+       Log.d(TAG, "value : " + value);
+      
     }
 
     cordova.getThreadPool().execute(new Runnable() {
